@@ -1,0 +1,44 @@
+form{
+    /* background-color: aqua; */
+    background-color: #202020;
+    width: 100vw; /* Hace que el formulario ocupe todo el ancho de la pantalla */
+    
+    box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+    padding: 1.5rem;
+    color: white;
+    
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+  }
+
+  label{
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.8rem;
+  }
+  form input{
+    height: 3rem;
+    width: 45rem;
+  }
+
+  button {
+    background-color: #ff6700;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button:hover {
+    background-color: #ff8533;
+  }

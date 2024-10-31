@@ -14,7 +14,7 @@ function PokemonDetails({ details }) {
         </div>
         
         <div className={styles.pokemonDetails}>
-          <div className={styles.pokemonColumns}>
+          <div className={styles.pokemonColumns1}>
             <img 
               src={details.sprites.other['official-artwork'].front_default} 
               alt={details.name} 
@@ -34,9 +34,10 @@ function PokemonDetails({ details }) {
           <div className={styles.spritesContainer}>
             <div className={styles.spriteColumn}>
               <img src={details.sprites.front_default} alt="Front sprite" />
+              <img src={details.sprites.back_default} alt="Back sprite" />
             </div>
             <div className={styles.spriteColumn}>
-              <img src={details.sprites.back_default} alt="Back sprite" />
+              
             </div>
           </div>
         </div>

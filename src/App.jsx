@@ -75,7 +75,7 @@ function App() {
     <div>
 
       <Input busqueda={busqueda} setBusqueda={setBusqueda} />
-      <p>Búsqueda: {busqueda}</p> {/* Muestra el valor de `busqueda` quitar mas adelante*/}
+      {/* <p>Búsqueda: {busqueda}</p> Muestra el valor de `busqueda` quitar mas adelante */}
 
       {/* Mostrar detalles del Pokémon usando el componente PokemonDetails */}
       <PokemonDetails details={pokemonDetails} />

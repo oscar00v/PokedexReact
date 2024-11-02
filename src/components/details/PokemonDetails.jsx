@@ -4,7 +4,7 @@ import styles from './PokemonDetails.module.css';
 
 function PokemonDetails({ details }) {
     if (!details) {
-      return <p>Selecciona un Pokémon para ver los detalles.</p>;
+      return <p>Busca un pokemon por nombre o numero para ver mas detalles </p>
     }
   
     return (

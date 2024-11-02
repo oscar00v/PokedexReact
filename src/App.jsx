@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import PokemonGrid from './components/Grid/PokemonGrid.jsx';
 import Input from './components/Input/Input.jsx';
 import PokemonDetails from './components/details/pokemonDetails.jsx';
 import './styles.css';
 import Banner from './components/banner/banner.jsx';
 import { useEffect } from 'react';
+import Types from './components/typs/Types.jsx';
+
+
 
 function App() {
   const URL_BASE = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';
@@ -12,6 +16,9 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [pokemonDetails, setPokemonDetails] = useState(null);//
   const [error, setError] = useState(null);
+
+  const [types, setTypes] = useState([]);
+  const [selectedType, setSelectedType] = useState('');
   //////////?
 
   async function fetchPokemons() {
@@ -78,16 +85,38 @@ function App() {
     getPokemonDetails(pokemon.url);
   }
 
+  async function fetchPokemonsByType(type) {
+    if (!type) {
+      const response = await fetch(URL_BASE);
+      if (!response.ok) throw new Error("Error fetching Pokémon data");
+      const data = await response.json();
+      return data.results;
+    } else {
+      const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+      if (!response.ok) throw new Error("Error fetching Pokémon type data");
+      const data = await response.json();
+      return data.pokemon.map((entry) => entry.pokemon);
+    }
+  }
+  useEffect(() => {
+    async function getPokemons() {
+      const pokemonData = await fetchPokemonsByType(selectedType);
+      setPokemons(pokemonData);
+    }
+
+    getPokemons();
+  }, [selectedType]);
+
   return (
     <div>
-      
+
       <Input busqueda={busqueda} setBusqueda={setBusqueda} />
-      
+
 
       {/* Mostrar detalles del Pokémon usando el componente PokemonDetails */}
       <PokemonDetails details={pokemonDetails} />
-      
-      <Banner/>
+      <Types setSelectedType={setSelectedType} />
+      <Banner />
     </div>
   )
 

@@ -211,8 +211,22 @@ function App() {
       const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
       if (!response.ok) throw new Error("Error fetching Pokémon type data");
       const data = await response.json();
-      return data.pokemon.map((entry) => entry.pokemon);
+
+      // Extraer solo los Pokémon de los primeros 151
+      const allPokemons = data.pokemon.map((entry) => entry.pokemon);
+      const filteredPokemons = allPokemons.filter((pokemon) => {
+        const id = extractPokemonId(pokemon.url);
+        return id <= 151; // Filtrar para que solo incluya Pokémon hasta el número 151
+      });
+
+      return filteredPokemons; // Retornar solo los Pokémon filtrados
     }
+  }
+
+  // Función para extraer el ID del Pokémon de la URL
+  function extractPokemonId(url) {
+    const idMatch = url.match(/\/(\d+)\//);
+    return idMatch ? parseInt(idMatch[1]) : null;
   }
 
   useEffect(() => {
@@ -231,7 +245,7 @@ function App() {
   return (
     <div>
       <Input busqueda={busqueda} setBusqueda={setBusqueda} />
-      
+
       <PokemonDetails details={pokemonDetails} />
       <Types setSelectedType={setSelectedType} />
       <PokemonGrid pokemons={pokemonLimitados} onPokemonClick={setPokemonDetails} />

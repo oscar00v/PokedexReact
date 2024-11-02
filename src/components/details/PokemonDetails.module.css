@@ -1,6 +1,10 @@
 .pokemonCard{
-width: 50%;
-margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+width: 80%;
+margin: 2rem auto; /* Esto centra el contenedor horizontalmente */
+padding: 1rem;
+
+display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 
@@ -9,6 +13,7 @@ border-radius: 2.4rem;
 
 text-align: center;
 box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+max-width: 600px; /* Limitar el tamaño máximo */
 }
 
 .pokemonColumns1:hover img{
@@ -18,3 +23,22 @@ width: 50%;
 object-fit: cover; */
 
 } 
+
+@media (max-width: 768px) {
+    .pokemonCard {
+      width: 90%; /* Más ancho en pantallas pequeñas */
+    }
+    .pokemonCard img {
+        width: 50%; /* Aún más pequeña para pantallas estrechas */
+      }
+  }
+
+  @media (max-width: 250px) {
+    .pokemonCard {
+      width: 60%; /* Más ancho en pantallas pequeñas */
+      font-size: .5rem;
+    }
+    .pokemonCard img {
+        width: 50%; /* Aún más pequeña para pantallas estrechas */
+      }
+  }

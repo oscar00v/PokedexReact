@@ -11,6 +11,7 @@ form{
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 0.5rem;
     
   }
 
@@ -23,6 +24,7 @@ form{
   form input{
     height: 3rem;
     width: 45rem;
+    max-width: 80%; /* Ajusta el ancho máximo en pantallas pequeñas */
   }
 
   button {
@@ -42,3 +44,25 @@ form{
   button:hover {
     background-color: #ff8533;
   }
+
+
+  @media (max-width: 520px) {
+    form {
+      flex-direction: column; /* Cambia la dirección de los elementos */
+      align-items: center;
+  }
+
+  form input {
+      width: 100%; /* Asegúrate de que el input ocupe todo el ancho posible */
+  }
+
+  button {
+      
+      width: 30%; /* Ajusta el ancho del botón para que también ocupe todo el espacio disponible */
+     
+  }
+
+  label {
+      font-size: 2.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+  }
+}

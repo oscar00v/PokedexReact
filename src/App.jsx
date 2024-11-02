@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Input from './components/Input/Input.jsx';
 import PokemonDetails from './components/details/pokemonDetails.jsx';
 import './styles.css';
+import Banner from './components/banner/banner.jsx';
 import { useEffect } from 'react';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   const [busqueda, setBusqueda] = useState('');
   const [pokemons, setPokemons] = useState([]);
   const [pokemonDetails, setPokemonDetails] = useState(null);//
-
+  const [error, setError] = useState(null);
   //////////?
 
   async function fetchPokemons() {
@@ -20,7 +21,7 @@ function App() {
 
     if (!response.ok) {
       //!como se pone la respuesta de error en React
-      // throw new Error("Error fetching Pokémon data");
+      throw new Error("Error fetching Pokémon data");
     }
     const data = await response.json();
     //todo console.log("data:", data);
@@ -42,6 +43,10 @@ function App() {
   // Función para obtener detalles de un Pokémon específico
   async function getPokemonDetails(URLPokemon) {
     const response = await fetch(URLPokemon);
+    if (!response.ok) {
+      throw new Error("Error al obtener los detalles del Pokémon");
+    }
+
     const datapokemon = await response.json();
     setPokemonDetails(datapokemon); // Guardar los detalles en el estado
 
@@ -55,6 +60,8 @@ function App() {
   }, [busqueda]);
 
   function checkNameOrNomber() {
+    setError(null);
+    setPokemonDetails(null);
     const isNumber = !isNaN(busqueda);
     let pokemon;
 
@@ -73,13 +80,14 @@ function App() {
 
   return (
     <div>
-
+      
       <Input busqueda={busqueda} setBusqueda={setBusqueda} />
-      {/* <p>Búsqueda: {busqueda}</p> Muestra el valor de `busqueda` quitar mas adelante */}
+      
 
       {/* Mostrar detalles del Pokémon usando el componente PokemonDetails */}
       <PokemonDetails details={pokemonDetails} />
-
+      
+      <Banner/>
     </div>
   )
 

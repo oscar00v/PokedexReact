@@ -1,0 +1,29 @@
+.banner{
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    
+}
+.banner a {
+    font-weight: bold; 
+    
+}
+.githubLink  {
+    color: #f0f0f0; 
+    font-size: 1.2rem;
+
+    text-decoration: none; /* Quita el subrayado */
+  }
+  
+  .githubLink:hover {
+    color: #ff9900; /* Un color para hover */
+  }
+  .banner img{
+    border-radius: 50%;
+  }

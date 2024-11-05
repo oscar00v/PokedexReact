@@ -35,7 +35,7 @@ function Input({ busqueda, setBusqueda }) {
         </button>
         
         <Link to="/" className="pokeball-link" id='home'>
-          <label htmlFor="Pokedex" className="pokeball-label " id='home'>Home</label>
+          <button htmlFor="Pokedex" className="pokeball-label " id='home'>Home</button>
         </Link>
         
       </form>

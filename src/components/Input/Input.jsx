@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importar el hook de navegación
+import { Link } from 'react-router-dom';
 import styles from './Input.module.css';
 
 function Input({ busqueda, setBusqueda }) {
@@ -19,7 +20,10 @@ function Input({ busqueda, setBusqueda }) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="Pokedex">Pokedex</label>
+      <Link to="/" className="link-sin-estilo">
+      <label htmlFor="Pokedex" style={{ cursor: 'pointer' }}>Pokedex</label>
+      </Link>
+
         <input
           type="text"
           value={reserch}

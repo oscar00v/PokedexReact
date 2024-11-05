@@ -83,8 +83,7 @@ function App() {
     <div>
       <Input busqueda={busqueda} setBusqueda={setBusqueda} />
       {error && <p>{error}</p>}
-      
-      
+
       <Routes>
         <Route path='/' element={<PokemonGrid pokemons={pokemons} onPokemonClick={setPokemonDetails} />}/>
         <Route
@@ -92,6 +91,7 @@ function App() {
           element={<PokemonDetailsPage setPokemonDetails={setPokemonDetails} />}
         />
       </Routes>
+      
       {pokemonDetails && !location.pathname.includes('/pokedex/') && <PokemonDetails details={pokemonDetails} />}
       
       <Banner />

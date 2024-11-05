@@ -14,6 +14,10 @@ form{
     gap: 0.5rem;
     
   }
+  .link-sin-estilo {
+    text-decoration: none;
+    color: inherit;
+  }
 
   label{
     font-size: 3.2rem;

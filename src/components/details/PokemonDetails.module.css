@@ -1,5 +1,5 @@
 .pokemonCard{
-width: 80%;
+width: 100%;
 margin: 2rem auto; /* Esto centra el contenedor horizontalmente */
 padding: 1rem;
 
@@ -29,7 +29,9 @@ object-fit: cover; */
 
 }
 .pokemonSprites img{
-  width: 18rem;
+ 
+  width: 15rem;
+ 
 }
 
 @media (max-width: 768px) {
@@ -50,3 +52,6 @@ object-fit: cover; */
         width: 50%; /* Aún más pequeña para pantallas estrechas */
       }
   }
+
+
+  

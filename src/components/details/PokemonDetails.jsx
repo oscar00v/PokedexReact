@@ -46,3 +46,6 @@ function PokemonDetails({ details }) {
   }
   
   export default PokemonDetails;
+
+
+  

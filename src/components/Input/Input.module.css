@@ -1,57 +1,72 @@
-form{
-    /* background-color: aqua; */
-    background-color: #202020;
-    width: 100vw; /* Hace que el formulario ocupe todo el ancho de la pantalla */
-    
-    box-sizing: border-box; /* Incluye el padding dentro del ancho total */
-    padding: 1.5rem;
-    color: white;
-    
+form {
+  background-color: #202020; /* Color de fondo del formulario */
+  width: 100vw; /* Hace que el formulario ocupe todo el ancho de la pantalla */
+  box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+  padding: 1.5rem;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    
-  }
-  .link-sin-estilo {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  label{
-    font-size: 3.2rem;
-    font-weight: 700;
-    text-align: center;
-    padding: 0.8rem;
-  }
-  form input{
-    height: 3rem;
-    width: 45rem;
-    max-width: 80%; /* Ajusta el ancho máximo en pantallas pequeñas */
-  }
-
-  button {
-    background-color: #ff6700;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    margin-left: 0.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    color: white;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+label {
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.8rem;
   
-  button:hover {
-    background-color: #ff8533;
-  }
+}
 
+form input {
+  height: 3rem;
+  width: 45rem;
+  max-width: 80%; /* Ajusta el ancho máximo en pantallas pequeñas */
+}
 
-  @media (max-width: 520px) {
-    form {
+button {
+  background-color: #ff6700; /* Color del botón */
+  border: none;
+  padding: 0.8rem 1.2rem;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #ff8533; /* Color del botón al pasar el ratón */
+}
+
+.pokeball-link {
+  display: inline-block; /* Asegura que el tamaño del contenedor se ajuste al contenido */
+  text-decoration: none; /* Sin subrayado */
+  cursor: pointer; /* Cambia el cursor a mano */
+  width: 100px; /* Ajusta el tamaño como prefieras */
+  height: 50px; /* Ajusta la altura como prefieras */
+  background: radial-gradient(circle at 50% 50%, #ff0000 40%, #ffffff 40%, #ffffff 60%, #000000 60%, #000000 100%); /* Cambia los colores aquí */
+  border: 5px solid #000; /* Bordes de la Pokébola */
+  border-radius: 50%; /* Hace que el fondo sea circular */
+  position: relative; /* Necesario para el pseudo-elemento */
+  margin: 10px; /* Espaciado alrededor */
+}
+
+.pokeball-label {
+  position: absolute; /* Para centrar el texto */
+  top: 50%; /* Mover hacia abajo */
+  left: 50%; /* Mover hacia la derecha */
+  transform: translate(-50%, -50%); /* Centra el texto */
+  color: white; /* Color del texto, cámbialo si es necesario */
+  font-weight: bold; /* Negrita */
+  z-index: 1; /* Asegura que el texto esté sobre el fondo */
+}
+
+@media (max-width: 520px) {
+  form {
       flex-direction: column; /* Cambia la dirección de los elementos */
       align-items: center;
   }
@@ -61,12 +76,17 @@ form{
   }
 
   button {
-      
       width: 30%; /* Ajusta el ancho del botón para que también ocupe todo el espacio disponible */
-     
   }
 
   label {
       font-size: 2.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
   }
 }
+
+a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+

@@ -83,23 +83,17 @@ function App() {
     <div>
       <Input busqueda={busqueda} setBusqueda={setBusqueda} />
       {error && <p>{error}</p>}
-      <PokemonGrid pokemons={pokemons} onPokemonClick={setPokemonDetails} />
+      
       
       <Routes>
+        <Route path='/' element={<PokemonGrid pokemons={pokemons} onPokemonClick={setPokemonDetails} />}/>
         <Route
-          path= "/pokedex/"
-          element={<Layout></Layout>}
-        >
-          
-        
-        <Route 
-
-          path=":id" 
-          element={<PokemonDetailsPage setPokemonDetails={setPokemonDetails} />} 
+          path= "/pokedex/:id"
+          element={<PokemonDetailsPage setPokemonDetails={setPokemonDetails} />}
         />
-        </Route>
       </Routes>
       {pokemonDetails && !location.pathname.includes('/pokedex/') && <PokemonDetails details={pokemonDetails} />}
+      
       <Banner />
     </div>
   );

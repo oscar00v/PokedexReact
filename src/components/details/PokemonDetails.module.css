@@ -34,24 +34,24 @@ object-fit: cover; */
  
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .pokemonCard {
-      width: 90%; /* Más ancho en pantallas pequeñas */
+      width: 90%; 
     }
     .pokemonCard img {
-        width: 50%; /* Aún más pequeña para pantallas estrechas */
+        width: 50%; 
       }
   }
 
   @media (max-width: 250px) {
     .pokemonCard {
-      width: 60%; /* Más ancho en pantallas pequeñas */
+      width: 60%; 
       font-size: .5rem;
     }
     .pokemonCard img {
-        width: 50%; /* Aún más pequeña para pantallas estrechas */
+        width: 50%; 
       }
-  }
+  } */
 
 
   

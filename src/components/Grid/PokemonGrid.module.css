@@ -64,6 +64,10 @@
     filter: grayscale(0%); /* Cambiar a color al hacer hover en la carta */
     filter: drop-shadow(0px 0px 12px grey); /* Efecto de sombra en hover */
   }
+
+  .button{
+    background-color: #ff8533; /* Color del botón al pasar el ratón */
+  }
   
   /* Estilos de los tipos */
   .type-grass {

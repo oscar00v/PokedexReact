@@ -1,5 +1,7 @@
 import React from 'react'
-import styles from './Banner.module.css';function Banner() {
+import styles from './Banner.module.css';
+
+function Banner() {
   return (
     <div>
       <header className={styles.banner}>

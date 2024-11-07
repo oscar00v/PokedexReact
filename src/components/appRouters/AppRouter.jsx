@@ -7,8 +7,8 @@ function AppRouter() {
   console.log("Test appRouter")
   return (
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/pokedex/:id" element={<PokemonDetailsPage />} />
+      {/* <Route path="/" element={<App />} />
+      <Route path="/pokedex/:id" element={<PokemonDetailsPage />} /> */}
     </Routes>
   );
 }

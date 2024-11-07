@@ -100,4 +100,3 @@ function App() {
 }
 
 export default App;
-//! header componente footer

@@ -34,7 +34,7 @@ object-fit: cover; */
  
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .pokemonCard {
       width: 90%; 
     }
@@ -51,7 +51,7 @@ object-fit: cover; */
     .pokemonCard img {
         width: 50%; 
       }
-  } */
+  }
 
 
   

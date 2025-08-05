@@ -51,7 +51,7 @@ function App() {
   useEffect(() => {
     getPokemons();
   }, []);
-
+//hola
   // Efecto para manejar la búsqueda
   useEffect(() => {
     if (busqueda) {
